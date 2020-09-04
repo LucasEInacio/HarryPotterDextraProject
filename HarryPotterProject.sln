@@ -1,0 +1,57 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30413.136
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3-Presentation", "3-Presentation", "{61BC7474-E89B-4FF1-83F4-B9D8E9BC1B7A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2-Domain", "2-Domain", "{B808C743-5BB2-48C2-9AB8-4562A109B1C2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1-Infrastructure", "1-Infrastructure", "{EA71C2CC-E320-400A-8EC8-0974AE62A295}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4-Tests", "4-Tests", "{31C742CB-94F1-4C44-9C28-3BC44FCD81B7}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HarryPotterProject.Api", "src\HarryPotterProject.Api\HarryPotterProject.Api.csproj", "{1090D7D4-8B33-4C62-A457-D384991BDC75}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HarryPotterProject.Domain", "src\HarryPotterProject.Domain\HarryPotterProject.Domain.csproj", "{859282ED-AECE-47F4-9C74-7F9DDD38453F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HarryPotterProject.Data", "src\HarryPotterProject.Data\HarryPotterProject.Data.csproj", "{77A4F65E-6E6E-4D3F-BA1A-C78160358278}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HarryPotterProject.CrossCutting", "src\HarryPotterProject.CrossCutting\HarryPotterProject.CrossCutting.csproj", "{B81147B8-74A2-44CB-AFB8-3DD906302759}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1090D7D4-8B33-4C62-A457-D384991BDC75}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1090D7D4-8B33-4C62-A457-D384991BDC75}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1090D7D4-8B33-4C62-A457-D384991BDC75}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1090D7D4-8B33-4C62-A457-D384991BDC75}.Release|Any CPU.Build.0 = Release|Any CPU
+		{859282ED-AECE-47F4-9C74-7F9DDD38453F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{859282ED-AECE-47F4-9C74-7F9DDD38453F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{859282ED-AECE-47F4-9C74-7F9DDD38453F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{859282ED-AECE-47F4-9C74-7F9DDD38453F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{77A4F65E-6E6E-4D3F-BA1A-C78160358278}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{77A4F65E-6E6E-4D3F-BA1A-C78160358278}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{77A4F65E-6E6E-4D3F-BA1A-C78160358278}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{77A4F65E-6E6E-4D3F-BA1A-C78160358278}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B81147B8-74A2-44CB-AFB8-3DD906302759}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B81147B8-74A2-44CB-AFB8-3DD906302759}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B81147B8-74A2-44CB-AFB8-3DD906302759}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B81147B8-74A2-44CB-AFB8-3DD906302759}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{1090D7D4-8B33-4C62-A457-D384991BDC75} = {61BC7474-E89B-4FF1-83F4-B9D8E9BC1B7A}
+		{859282ED-AECE-47F4-9C74-7F9DDD38453F} = {B808C743-5BB2-48C2-9AB8-4562A109B1C2}
+		{77A4F65E-6E6E-4D3F-BA1A-C78160358278} = {EA71C2CC-E320-400A-8EC8-0974AE62A295}
+		{B81147B8-74A2-44CB-AFB8-3DD906302759} = {EA71C2CC-E320-400A-8EC8-0974AE62A295}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {76E1A25A-718D-4FFF-9689-65910C88829C}
+	EndGlobalSection
+EndGlobal
