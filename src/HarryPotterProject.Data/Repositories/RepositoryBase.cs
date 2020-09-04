@@ -32,6 +32,11 @@ namespace HarryPotterProject.Data.Repositories
             return DbSet;
         }
 
+        public TEntity GetById(int id)
+        {
+            return DbSet.Find(id);
+        }
+
         public void Insert(TEntity obj)
         {
             Db.Add(obj);
