@@ -1,9 +1,6 @@
 ﻿using HarryPotterProject.Data.EFConfiguration.Mapping;
-using HarryPotterProject.Domain.Character.Entities;
+using HarryPotterProject.Domain.Characters.Entities;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace HarryPotterProject.Data.EFConfiguration
 {

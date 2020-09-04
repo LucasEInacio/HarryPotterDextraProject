@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace HarryPotterProject.Domain.Character.Entities
+namespace HarryPotterProject.Domain.Characters.Entities
 {
     public class Character
     {
