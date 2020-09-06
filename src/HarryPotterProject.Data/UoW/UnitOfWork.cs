@@ -1,20 +1,24 @@
-﻿using HarryPotterProject.Domain.Commom.Interfaces;
+﻿using HarryPotterProject.Data.EFConfiguration;
+using HarryPotterProject.Domain.Commom.Interfaces;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace HarryPotterProject.Data.UoW
 {
     public class UnitOfWork : IUnitOfWork
     {
+        private readonly HarryPotterContext _context;
+        public UnitOfWork(HarryPotterContext context)
+        {
+            _context = context;
+        }
         public bool Commit()
         {
-            return 
+            return _context.SaveChanges() > 0;
         }
 
         public void Dispose()
         {
-            throw new NotImplementedException();
+            _context.Dispose();
         }
     }
 }
