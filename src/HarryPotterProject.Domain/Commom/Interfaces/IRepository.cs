@@ -8,6 +8,7 @@ namespace HarryPotterProject.Domain.Commom.Interfaces
     public interface IRepository<TEntity> : IDisposable where TEntity : class
     {
         IQueryable<TEntity> GetAll();
+        TEntity GetById(int id);
         void Insert(TEntity obj);
         void Update(TEntity obj);
         void Delete(int id);

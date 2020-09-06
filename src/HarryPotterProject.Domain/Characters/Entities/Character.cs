@@ -6,6 +6,19 @@ namespace HarryPotterProject.Domain.Characters.Entities
 {
     public class Character
     {
+        public Character()
+        {
+        }
+        public Character(int id, string name, string role, string school, string house, string patronus)
+        {
+            Id = id;
+            Name = name;
+            Role = role;
+            School = school;
+            House = house;
+            Patronus = patronus;
+        }
+
         public int Id { get; set; }
         public string Name { get; set; }
         public string Role { get; set; }

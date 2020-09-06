@@ -17,6 +17,7 @@ namespace HarryPotterProject.CrossCutting
             RegisterDataBase(services, configuration);
 
             RegisterDataServices(services);
+            RegisterDomainServices(services);
         }
 
         private static void RegisterDataBase(IServiceCollection services, IConfiguration configuration)
@@ -27,6 +28,11 @@ namespace HarryPotterProject.CrossCutting
         private static void RegisterDataServices(IServiceCollection services)
         {
             services.RegisterTypes(Data.IoC.Module.GetTypes());
+        }
+
+        private static void RegisterDomainServices(IServiceCollection services)
+        {
+            services.RegisterTypes(Domain.IoC.Module.GetTypes());
         }
 
         private static void RegisterTypes(this IServiceCollection services, Dictionary<Type, Type> types)

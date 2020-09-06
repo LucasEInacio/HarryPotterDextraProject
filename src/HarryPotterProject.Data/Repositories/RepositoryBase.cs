@@ -2,9 +2,7 @@
 using HarryPotterProject.Domain.Commom.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace HarryPotterProject.Data.Repositories
 {
@@ -15,6 +13,7 @@ namespace HarryPotterProject.Data.Repositories
         public RepositoryBase(HarryPotterContext context)
         {
             Db = context;
+            DbSet = Db.Set<TEntity>();
         }
         public void Delete(int id)
         {
@@ -30,6 +29,11 @@ namespace HarryPotterProject.Data.Repositories
         public IQueryable<TEntity> GetAll()
         {
             return DbSet;
+        }
+
+        public TEntity GetById(int id)
+        {
+            return DbSet.Find(id);
         }
 
         public void Insert(TEntity obj)

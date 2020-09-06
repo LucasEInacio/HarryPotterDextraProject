@@ -1,27 +1,49 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using HarryPotterProject.Domain.Characters.Dtos;
 using HarryPotterProject.Domain.Characters.Interfaces;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
 
 namespace HarryPotterProject.Api.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/[controller]")]
     public class CharacterController : ControllerBase
     {
         private readonly ICharacterRepository _characterRepository;
-        public CharacterController(ICharacterRepository characterRepository)
+        private readonly ICharacterService _characterService;
+        public CharacterController(ICharacterRepository characterRepository, ICharacterService characterService)
         {
             _characterRepository = characterRepository;
+            _characterService = characterService;
         }
 
         [HttpGet]
         public IActionResult GetAll()
         {
             return Ok(_characterRepository.GetAll());
+        }
+
+        [HttpGet("{id}")]
+        public IActionResult GetById(int id)
+        {
+            return Ok(_characterRepository.GetById(id));
+        }
+
+        [HttpPost]
+        public IActionResult Insert([FromBody]CharacterRequest characterRequest)
+        {
+            return Ok(_characterService.Insert(characterRequest));
+        }
+
+        [HttpPut]
+        public IActionResult Update([FromBody] CharacterRequest characterRequest)
+        {
+            return Ok(_characterService.Update(characterRequest));
+        }
+
+        [HttpDelete("{id}")]
+        public IActionResult Delete(int id)
+        {
+            return Ok(_characterService.Delete(id));
         }
     }
 }
