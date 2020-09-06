@@ -6,10 +6,12 @@ using System.Linq;
 
 namespace HarryPotterProject.Data.Repositories
 {
-    public class RepositoryBase<TEntity> : IRepository<TEntity> where TEntity : class
+    public class RepositoryBase<TEntity, TFilter> : IRepository<TEntity, TFilter> 
+        where TEntity : BaseEntity
+        where TFilter : class
     {
-        private readonly HarryPotterContext Db;
-        private readonly DbSet<TEntity> DbSet;
+        protected readonly HarryPotterContext Db;
+        protected readonly DbSet<TEntity> DbSet;
         public RepositoryBase(HarryPotterContext context)
         {
             Db = context;
@@ -26,17 +28,17 @@ namespace HarryPotterProject.Data.Repositories
             GC.SuppressFinalize(this);
         }
 
-        public IQueryable<TEntity> GetAll()
+        public virtual IQueryable<TEntity> GetAll(TFilter filter)
         {
             return DbSet;
         }
 
-        public TEntity GetById(int id)
+        public virtual TEntity GetById(int id)
         {
             return DbSet.Find(id);
         }
 
-        public void Insert(TEntity obj)
+        public virtual void Insert(TEntity obj)
         {
             Db.Add(obj);
         }
@@ -46,7 +48,7 @@ namespace HarryPotterProject.Data.Repositories
             return Db.SaveChanges();
         }
 
-        public void Update(TEntity obj)
+        public virtual void Update(TEntity obj)
         {
             Db.Update(obj);
         }

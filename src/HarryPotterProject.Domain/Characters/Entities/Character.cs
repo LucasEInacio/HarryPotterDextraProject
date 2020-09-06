@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using HarryPotterProject.Domain.Commom.Interfaces;
 
 namespace HarryPotterProject.Domain.Characters.Entities
 {
-    public class Character
+    public class Character : BaseEntity
     {
         public Character()
         {
@@ -19,7 +17,6 @@ namespace HarryPotterProject.Domain.Characters.Entities
             Patronus = patronus;
         }
 
-        public int Id { get; set; }
         public string Name { get; set; }
         public string Role { get; set; }
         public string School { get; set; }
