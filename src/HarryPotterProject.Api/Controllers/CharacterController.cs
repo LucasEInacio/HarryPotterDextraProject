@@ -17,9 +17,9 @@ namespace HarryPotterProject.Api.Controllers
         }
 
         [HttpGet]
-        public IActionResult GetAll()
+        public IActionResult GetAll([FromQuery] CharacterFilter filter)
         {
-            return Ok(_characterRepository.GetAll());
+            return Ok(_characterRepository.GetAll(filter));
         }
 
         [HttpGet("{id}")]
