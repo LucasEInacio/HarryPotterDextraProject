@@ -6,25 +6,25 @@
     <form name="characterForm" role="form" class="characterForm" novalidate>
         <label for="character.name">Name</label>
         <br>
-        <input data-ng-model="character.name" required/>
+        <input data-ng-model="character.name" required ng-disabled="disableControls"/>
         <br>
         <span class="error" ng-show="characterForm.character.name.$error.required">Required!</span><br>
 
         <label for="character.role">Role</label>
         <br>
-        <input data-ng-model="character.role" required/>
+        <input data-ng-model="character.role" required ng-disabled="disableControls"/>
         <br>
         <span class="error" ng-show="characterForm.character.role.$error.required">Required!</span><br>
 
         <label for="character.school">School</label>
         <br> 
-        <input data-ng-model="character.school" required/>
+        <input data-ng-model="character.school" required ng-disabled="disableControls"/>
         <br>
         <span class="error" ng-show="characterForm.character.school.$error.required">Required!</span><br>
 
         <label for="character.house">House</label>
         <br>
-        <select class="selectpicker" data-ng-model="character.house" ng-required="true">
+        <select class="selectpicker" data-ng-model="character.house" ng-required="true" ng-disabled="disableControls">
             <option ng-value="house._id" ng-repeat="house in houses">{{house.name}}</option>
         </select>
         <br>
@@ -32,7 +32,7 @@
 
         <label for="character.patronus">Patronus</label>
         <br>
-        <input data-ng-model="character.patronus" required/>
+        <input data-ng-model="character.patronus" required ng-disabled="disableControls"/>
         <br>
         <span class="error" ng-show="characterForm.character.patronus.$error.required">Required!</span><br>
 

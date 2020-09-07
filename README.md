@@ -17,7 +17,11 @@
 
 ![alt text](https://github.com/LucasEInacio/HarryPotterDextraProject/blob/dev/src/HarryPotterProject.UI/app/assets/character-insert.png)
 
-3 - Ao clicar em editar será buscado por Id o registro e poderá ser alterado.
+3 - Ao clicar em View será buscado por Id o registro e os controles serão desabilitados para alteração.
+
+![alt text](https://github.com/LucasEInacio/HarryPotterDextraProject/blob/dev/src/HarryPotterProject.UI/app/assets/character-view.png)
+
+4 - Ao clicar em Edit será buscado por Id o registro e poderá ser alterado.
 
 ![alt text](https://github.com/LucasEInacio/HarryPotterDextraProject/blob/dev/src/HarryPotterProject.UI/app/assets/SearchId-Edit.png)
 
