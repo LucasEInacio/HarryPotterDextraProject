@@ -30,3 +30,11 @@ main {
 .row {
     height: 100%;
 }
+
+.characterForm > .ng-invalid.ng-touched {
+  border-color: #FA787E;
+}
+
+.characterForm > .ng-valid.ng-touched {
+  border-color: #78FA89;
+}
