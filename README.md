@@ -3,7 +3,7 @@
 
 ## Para iniciar o projeto mude a connection string, inicie a API e a UI
 
-![alt text](src\src\HarryPotterProject.UI\app\assets\home.png)
+![alt text](https://github.com/LucasEInacio/HarryPotterDextraProject/blob/dev/src/HarryPotterProject.UI/app/assets/home.png)
 
 ## Tecnologias utilizadas
 
