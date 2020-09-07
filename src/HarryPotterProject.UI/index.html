@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+
+        <title>Harry Potter</title>
+
+        <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css" />     
+        <link rel="stylesheet" href="app/css/index.css" />        
+        <link rel="stylesheet" href="node_modules/angularjs-toast/angularjs-toast.min.css" />
+        <link rel="icon" href="data:;base64,=">
+        
+        <script src="node_modules/angular/angular.min.js"></script>
+        <script src="node_modules/angular-route/angular-route.min.js"></script>
+        <script src="node_modules/angular-sanitize/angular-sanitize.min.js"></script>
+        <script src="node_modules/angular-animate/angular-animate.min.js"></script>
+        <script src="node_modules/angularjs-toast/angularjs-toast.min.js"></script>
+        
+        <script src="app/app.js"></script>
+        <script src="app/controllers/home.controller.js"></script>
+        <script src="app/character/character-grid.controller.js"></script>
+        <script src="app/character/character.controller.js"></script>
+        <script src="app/character/character.factory.js"></script>
+        <script src="app/services/harry-potter-api.service.js"></script>
+        
+        <script src="app/routes/route.js"></script>
+        <script src="app/configValue.js"></script> 
+    </head>
+    <body ng-app="app" ng-controller="RootController">
+        <nav class="navbar navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand" href="#!/home"> Harry Potter </a>
+            </div>
+        </nav>
+        <main>
+            <div class="row">
+                <div class="col-md-2 menu">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item list-group-item-action">
+                            <a href="#!/home">
+                                Home
+                            </a>
+                        </li>
+                        <li class="list-group-item list-group-item-action">
+                            <a ng-href="#!/character">
+                                Character
+                            </a>
+                        </li>
+                        <li class="list-group-item"></li>
+                    </ul>
+                </div>
+
+                <div class="col-md-10 main-content">
+                    <div ng-view></div>
+                </div>
+            </div>
+        </main>
+        <footer class="bg-dark">
+            <p class="text-footer">
+                2020 - Lucas Inácio
+            </p>
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,22 @@
+{
+  "name": "harrypotterproject.ui",
+  "version": "1.0.0",
+  "description": "HarryPotterProject Interface",
+  "main": "app.js",
+  "scripts": {
+    "start": "http-server -a localhost -o",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Lucas Inácio",
+  "license": "ISC",
+  "dependencies": {
+    "angular": "^1.7.9",
+    "angular-animate": "^1.8.0",
+    "angular-route": "^1.8.0",
+    "angular-sanitize": "^1.8.0",
+    "angularjs-toast": "^4.0.0",
+    "bootstrap": "^4.4.1",
+    "http-server": "^0.12.1",
+    "jquery": "^3.5.1"
+  }
+}

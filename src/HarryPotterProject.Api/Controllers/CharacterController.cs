@@ -1,25 +1,26 @@
 ﻿using HarryPotterProject.Domain.Characters.Dtos;
 using HarryPotterProject.Domain.Characters.Interfaces;
 using Microsoft.AspNetCore.Mvc;
+using System.Threading.Tasks;
 
 namespace HarryPotterProject.Api.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class CharacterController : ControllerBase
+    public class CharacterController : ApiBase
     {
         private readonly ICharacterRepository _characterRepository;
         private readonly ICharacterService _characterService;
-        public CharacterController(ICharacterRepository characterRepository, ICharacterService characterService)
+        public CharacterController(ICharacterRepository characterRepository, ICharacterService characterService) : base(characterService)
         {
             _characterRepository = characterRepository;
             _characterService = characterService;
         }
 
         [HttpGet]
-        public IActionResult GetAll([FromQuery] CharacterFilter filter)
+        public async Task<IActionResult> GetAll([FromQuery] CharacterFilter filter)
         {
-            return Ok(_characterRepository.GetAll(filter));
+            return Ok(await _characterService.GetAll(filter));
         }
 
         [HttpGet("{id}")]
@@ -31,13 +32,13 @@ namespace HarryPotterProject.Api.Controllers
         [HttpPost]
         public IActionResult Insert([FromBody]CharacterRequest characterRequest)
         {
-            return Ok(_characterService.Insert(characterRequest));
+            return Response(_characterService.Insert(characterRequest));
         }
 
         [HttpPut]
         public IActionResult Update([FromBody] CharacterRequest characterRequest)
         {
-            return Ok(_characterService.Update(characterRequest));
+            return Response(_characterService.Update(characterRequest));
         }
 
         [HttpDelete("{id}")]

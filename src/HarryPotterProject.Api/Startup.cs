@@ -17,12 +17,19 @@ namespace HarryPotterProject.Api
             _configuration = configuration;
         }
 
+        private string allowOrigins = "_allowOrigins";
         public IConfiguration _configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+
+            services.AddCors(options => options.AddPolicy(allowOrigins, builder => {
+                builder.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod();
+            }));
+
+            services.AddResponseCaching();
 
             var harryPotterApiClientName = _configuration.GetSection("Services:HarryPotterApi").Key;
 
@@ -38,6 +45,8 @@ namespace HarryPotterProject.Api
                 TimeSpan.FromSeconds(10)
             })).AddPolicyHandler(breaker);
 
+            services.AddControllers().AddNewtonsoftJson(x => x.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
+
             DependencyInjection.Register(services, _configuration);
         }
 
@@ -52,6 +61,8 @@ namespace HarryPotterProject.Api
             app.UseHttpsRedirection();
 
             app.UseRouting();
+
+            app.UseCors(allowOrigins);
 
             app.UseAuthorization();
 
