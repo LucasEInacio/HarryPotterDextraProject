@@ -2,7 +2,10 @@
     <h5>Character</h5>
     
     <label for="">House</label>
-    <input data-ng-model="filter.house"/>
+    <select class="selectpicker" data-ng-model="filter.house">
+        <option></option>
+        <option ng-value="house._id" ng-repeat="house in houses">{{house.name}}</option>
+    </select>
 
     <label for="">Name</label>
     <input data-ng-model="filter.name"/>
@@ -27,7 +30,7 @@
                 <td>{{character.name}}</td>
                 <td>{{character.role}}</td>
                 <td>{{character.school}}</td>
-                <td>{{character.house}}</td>
+                <td>{{character.houseName}}</td>
                 <td>{{character.patronus}}</td>
                 <td>
                     <button class="btn btn-dark" data-ng-click="viewCharacter(character.id)">View</button>

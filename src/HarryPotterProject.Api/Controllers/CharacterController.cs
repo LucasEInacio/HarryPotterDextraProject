@@ -1,6 +1,7 @@
 ﻿using HarryPotterProject.Domain.Characters.Dtos;
 using HarryPotterProject.Domain.Characters.Interfaces;
 using Microsoft.AspNetCore.Mvc;
+using System.Threading.Tasks;
 
 namespace HarryPotterProject.Api.Controllers
 {
@@ -17,9 +18,9 @@ namespace HarryPotterProject.Api.Controllers
         }
 
         [HttpGet]
-        public IActionResult GetAll([FromQuery] CharacterFilter filter)
+        public async Task<IActionResult> GetAll([FromQuery] CharacterFilter filter)
         {
-            return Ok(_characterRepository.GetAll(filter));
+            return Ok(await _characterService.GetAll(filter));
         }
 
         [HttpGet("{id}")]

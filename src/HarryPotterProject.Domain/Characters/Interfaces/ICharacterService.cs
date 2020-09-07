@@ -1,7 +1,6 @@
 ﻿using HarryPotterProject.Domain.Characters.Dtos;
-using System;
 using System.Collections.Generic;
-using System.Text;
+using System.Threading.Tasks;
 
 namespace HarryPotterProject.Domain.Characters.Interfaces
 {
@@ -10,5 +9,6 @@ namespace HarryPotterProject.Domain.Characters.Interfaces
         int Insert(CharacterRequest characterRequest);
         bool Update(CharacterRequest characterRequest);
         bool Delete(int id);
+        Task<IEnumerable<CharacterResponse>> GetAll(CharacterFilter filter);
     }
 }

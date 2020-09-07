@@ -1,4 +1,4 @@
-app.controller("characterGridCtrl", function($scope, $location, characterFactory){
+app.controller("characterGridCtrl", function($scope, $location, characterFactory, harryPotterApi){
 
         $scope.filter = {};
         $scope.searchCharacters = searchCharacters;
@@ -11,7 +11,14 @@ app.controller("characterGridCtrl", function($scope, $location, characterFactory
 
     function Initialize(){
         searchCharacters();
+        getHouses();
     };
+
+    function getHouses(){
+        harryPotterApi.getHouses(function(result){
+            $scope.houses = result.data;
+        });
+    }
 
     function searchCharacters(){
         characterFactory.getAll($scope.filter, function(result) {

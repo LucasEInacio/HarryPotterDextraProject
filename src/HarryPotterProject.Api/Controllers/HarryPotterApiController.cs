@@ -17,7 +17,7 @@ namespace HarryPotterProject.Api.Controllers
         [HttpGet("houses")]
         public async Task<IActionResult> GetHouses()
         {
-            return Ok(await _repository.GetHouses());
+            return Ok(await _repository.GetHousesString());
         }
     }
 }

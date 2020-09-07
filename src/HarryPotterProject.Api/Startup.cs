@@ -45,6 +45,8 @@ namespace HarryPotterProject.Api
                 TimeSpan.FromSeconds(10)
             })).AddPolicyHandler(breaker);
 
+            services.AddControllers().AddNewtonsoftJson(x => x.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
+
             DependencyInjection.Register(services, _configuration);
         }
 

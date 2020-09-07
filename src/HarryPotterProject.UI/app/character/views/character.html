@@ -3,7 +3,7 @@
     
     <button class="btn btn-dark float-right" data-ng-click="close()">Close</button>
 
-    <form name="characterForm" role="form" ng-submit="save(characterForm)" novalidate>
+    <form name="characterForm" role="form" novalidate>
         <label for="character.name">Name</label>
         <br>
         <input data-ng-model="character.name" required/>
@@ -24,9 +24,9 @@
 
         <label for="character.house">House</label>
         <br>
-        <select class="form-control" data-ng-model="character.house">
+        <select class="selectpicker" data-ng-model="character.house">
             <option ng-value="house._id" ng-repeat="house in houses">{{house.name}}</option>
-          </select>
+        </select>
         <br>
         <span class="error" ng-show="characterForm.character.house.$error.required">Required!</span><br>
 
