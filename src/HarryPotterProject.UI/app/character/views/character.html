@@ -12,13 +12,13 @@
 
         <label for="character.role">Role</label>
         <br>
-        <input data-ng-model="character.role" required=true/>
+        <input data-ng-model="character.role" required/>
         <br>
         <span class="error" ng-show="characterForm.character.role.$error.required">Required!</span><br>
 
         <label for="character.school">School</label>
         <br> 
-        <input data-ng-model="character.school" required=true/>
+        <input data-ng-model="character.school" required/>
         <br>
         <span class="error" ng-show="characterForm.character.school.$error.required">Required!</span><br>
 
@@ -32,11 +32,11 @@
 
         <label for="character.patronus">Patronus</label>
         <br>
-        <input data-ng-model="character.patronus" required=true/>
+        <input data-ng-model="character.patronus" required/>
         <br>
         <span class="error" ng-show="characterForm.character.patronus.$error.required">Required!</span><br>
 
-        <button class="btn btn-dark" type="submit" data-ng-click="save(characterForm)">Save</button>
+        <button class="btn btn-dark" type="submit" data-ng-click="save(characterForm)" data-ng-if="!disableControls">Save</button>
     </form>
 
 </div>

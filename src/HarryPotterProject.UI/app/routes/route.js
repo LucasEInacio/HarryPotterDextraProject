@@ -25,5 +25,10 @@ app.config(function($routeProvider) {
             controller: "characterCtrl"
         })
 
+        .when("/edit-character", {
+            templateUrl: "app/character/views/character.html",
+            controller: "characterCtrl"
+        })
+
         .otherwise({ redirectTo: "/" });
 });

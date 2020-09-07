@@ -3,9 +3,9 @@ app.controller("characterGridCtrl", function($scope, $location, characterFactory
         $scope.filter = {};
         $scope.searchCharacters = searchCharacters;
         $scope.addCharacter = addCharacter;
-        $scope.close = close;
         $scope.viewCharacter = viewCharacter;
         $scope.deleteCharacter = deleteCharacter;
+        $scope.editCharacter = editCharacter;
 
     Initialize();
 
@@ -30,12 +30,12 @@ app.controller("characterGridCtrl", function($scope, $location, characterFactory
         $location.path("add-character");
     }
 
-    function close(){
-        $location.path("character");
-    }
-
     function viewCharacter(id){
         $location.path("view-character").search({id});
+    }
+
+    function editCharacter(id){
+        $location.path("edit-character").search({id});
     }
 
     function deleteCharacter(id){

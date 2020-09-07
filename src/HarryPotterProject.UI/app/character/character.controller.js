@@ -1,17 +1,17 @@
 app.controller("characterCtrl", function($scope, $location, $routeParams, characterFactory, harryPotterApi){
 
-        $scope.close = close;
-        $scope.save = save;
-        $scope.title = "Add Character";
+    $scope.close = close;
+    $scope.save = save;
+    $scope.title = $location.path() == "/add-character" ? "Add Character" : $location.path() == "/view-character" ? "View Character" : "Edit Character";
+
+    $scope.disableControls = $location.path() == "/view-character" ? true : false;
 
     Initialize();
 
     function Initialize(){
-        if($routeParams.id){
-            $scope.title = "View Character";
+        if($routeParams.id)
             getCharacter($routeParams.id);
-        }
-
+        
         getHouses();
     };
 
