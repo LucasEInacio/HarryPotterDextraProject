@@ -1,0 +1,39 @@
+<div class="container">
+    <h5>Character</h5>
+    
+    <label for="">House</label>
+    <input data-ng-model="filter.house"/>
+
+    <label for="">Name</label>
+    <input data-ng-model="filter.name"/>
+
+    <button class="btn btn-dark" data-ng-click="searchCharacters()">Search</button>
+
+    <button class="btn btn-dark float-right" data-ng-click="addCharacter()">Add</button>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Role</th>
+                <th>School</th>
+                <th>House</th>
+                <th>Patronus</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr data-ng-repeat="character in characterList">
+                <td>{{character.name}}</td>
+                <td>{{character.role}}</td>
+                <td>{{character.school}}</td>
+                <td>{{character.house}}</td>
+                <td>{{character.patronus}}</td>
+                <td>
+                    <button class="btn btn-dark" data-ng-click="viewCharacter(character.id)">View</button>
+                    <button class="btn btn-dark" data-ng-click="deleteCharacter(character.id)">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
