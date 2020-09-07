@@ -38,6 +38,7 @@
 - Injeção de Dependência
 - Arquitetura em camadas
 - Testes de Unidade
+- Flunt Notifications
 
 ## FrontEnd
 
@@ -47,3 +48,9 @@
 - HTML
 - CSS
 
+## Pontos de melhoria
+
+- Exibir caixas de confirmação para salvar e excluir os registros.
+- Exibir toast para alertar o usuário das ações executadas.
+
+## Desenvolvido por Lucas Inácio

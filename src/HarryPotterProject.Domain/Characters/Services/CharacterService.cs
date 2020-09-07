@@ -1,6 +1,7 @@
 ﻿using HarryPotterProject.Domain.Characters.Dtos;
 using HarryPotterProject.Domain.Characters.Entities;
 using HarryPotterProject.Domain.Characters.Interfaces;
+using HarryPotterProject.Domain.Commom;
 using HarryPotterProject.Domain.Commom.Interfaces;
 using HarryPotterProject.Domain.HarryPotterApi.Dtos;
 using HarryPotterProject.Domain.HarryPotterApi.Interfaces;
@@ -10,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace HarryPotterProject.Domain.Characters.Services
 {
-    public class CharacterService : ICharacterService
+    public class CharacterService : ServiceBase, ICharacterService
     {
         private readonly ICharacterRepository _repository;
         private readonly IHarryPotterApi _harryPotterApi;
@@ -32,6 +33,9 @@ namespace HarryPotterProject.Domain.Characters.Services
 
         public int Insert(CharacterRequest characterRequest)
         {
+            if (!ValidateRequest(characterRequest))
+                return characterRequest.Id;
+            
             var character = new Character(0, characterRequest.Name, characterRequest.Role, characterRequest.School, characterRequest.House, characterRequest.Patronus);
 
             _repository.Insert(character);
@@ -43,10 +47,13 @@ namespace HarryPotterProject.Domain.Characters.Services
 
         public bool Update(CharacterRequest characterRequest)
         {
+            if (!ValidateRequest(characterRequest))
+                return false;
+
             var character = new Character(characterRequest.Id, characterRequest.Name, characterRequest.Role, characterRequest.School, characterRequest.House, characterRequest.Patronus);
 
             _repository.Update(character);
-            
+
             return _unitOfWork.Commit();
         }
 
