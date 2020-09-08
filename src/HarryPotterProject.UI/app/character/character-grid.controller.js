@@ -40,8 +40,10 @@ app.controller("characterGridCtrl", function($scope, $location, characterFactory
 
     function deleteCharacter(id){
         characterFactory.deleteCharacter(id, function(result){
-            if(result.data)
+            if(result.data){
                 searchCharacters();
+                alert("Deleted Successfully");
+            }
         })
     }
 });
