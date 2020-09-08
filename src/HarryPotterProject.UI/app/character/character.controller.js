@@ -38,7 +38,7 @@ app.controller("characterCtrl", function($scope, $location, $routeParams, charac
     function insert(){
         characterFactory.insert($scope.character, function(result) {
             $scope.character.id = result.data;
-            alert("Inserted Succesfully");
+            alert("Inserted Successfully");
         },
         function(error){
             alert(error.data.errors ? error.data.errors[0] : error.data);
@@ -48,7 +48,7 @@ app.controller("characterCtrl", function($scope, $location, $routeParams, charac
     function update(){
         characterFactory.update($scope.character, function(result) {
             result.data;
-            alert("Updated Succesfully");
+            alert("Updated Successfully");
         },
         function(error){
             alert(error.data.errors ? error.data.errors[0] : error.data);
