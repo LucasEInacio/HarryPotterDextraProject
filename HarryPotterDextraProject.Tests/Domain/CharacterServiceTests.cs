@@ -1,15 +1,14 @@
-using System;
-using Xunit;
-using NSubstitute;
+using HarryPotterProject.Domain.Characters.Dtos;
+using HarryPotterProject.Domain.Characters.Entities;
 using HarryPotterProject.Domain.Characters.Interfaces;
 using HarryPotterProject.Domain.Characters.Services;
 using HarryPotterProject.Domain.Commom.Interfaces;
-using HarryPotterProject.Domain.HarryPotterApi.Interfaces;
-using System.Collections.Generic;
-using HarryPotterProject.Domain.Characters.Dtos;
-using HarryPotterProject.Domain.Characters.Entities;
 using HarryPotterProject.Domain.HarryPotterApi.Dtos;
+using HarryPotterProject.Domain.HarryPotterApi.Interfaces;
+using NSubstitute;
+using System.Collections.Generic;
 using System.Linq;
+using Xunit;
 
 namespace HarryPotterDextraProject.Domain.Tests
 {
