@@ -7,6 +7,16 @@ namespace HarryPotterProject.Domain.Characters.Dtos
 {
     public class CharacterRequest : RequestBase, IRequest
     {
+        public CharacterRequest(int id, string name, string role, string school, string house, string patronus)
+        {
+            Id = id;
+            Name = name;
+            Role = role;
+            School = school;
+            House = house;
+            Patronus = patronus;
+        }
+
         public int Id { get; set; }
         public string Name { get; set; }
         public string Role { get; set; }
